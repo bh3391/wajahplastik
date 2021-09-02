@@ -22,10 +22,6 @@ class Dashboard extends BaseController
 		$data['judul'] = 'Dashboard | Your Blog';
 		$data['user'] = "Agoes Djanar";
 		$data['breadcrumb'] = " / List Blog Kamu";
-
-
-
-
 		return view('News/_bloglistadmin', $data);
 	}
 	public function blogEdit()
@@ -51,8 +47,7 @@ class Dashboard extends BaseController
 	}
 	public function blogDelete()
 	{
-
-		// $data['judul'] = 'Dashboard| Delete Blog';
+	// $data['judul'] = 'Dashboard| Delete Blog';
 		// $data['user'] = "Agoes Djanar";
 		// $data['breadcrumb'] =" / Hapus Blog";
 		echo '(Blog Telah Dihapus )';
