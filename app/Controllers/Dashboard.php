@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\GalleryModel;
 use App\Models\YoutubeModel;
+use App\Models\NewsModel;
 
 class Dashboard extends BaseController
 {
@@ -19,24 +20,84 @@ class Dashboard extends BaseController
 	}
 	public function blogList()
 	{
-		$data['judul'] = 'Dashboard | Your Blog';
-		$data['user'] = "Agoes Djanar";
-		$data['breadcrumb'] = " / List Blog Kamu";
+		$model = new NewsModel();
+		$News = $model->getNews();
+		$data = [
+			'judul' => 'Dashboard | Your Blog',
+			'user' => "Agoes Djanar",
+			'breadcrumb' => " /  Your Blog	",
+			'News' => ($News)
+		];
+		
 		return view('News/_bloglistadmin', $data);
 	}
-	public function blogEdit()
+	public function blogForm()
 	{
-		$data['judul'] = 'Dashboard | Edit blog';
-		$data['user'] = "Agoes Djanar";
-		$data['breadcrumb'] = "  / Update Blog";
-		return view('News/_blogedit', $data);
-	}
-	public function blogAdd()
-	{
-		$data['judul'] = 'Dashboard| Add Blog';
+		$data['judul'] = 'Dashboard | Tambahkan Blog';
 		$data['user'] = "Agoes Djanar";
 		$data['breadcrumb'] = " / Tambahkan Blog";
 		return view('News/_blogadd', $data);
+	}
+
+	public function blogAdd()
+	{
+
+		$session = session();
+		$model = new NewsModel();
+		$validation = $this->validate([
+			'News_image' =>
+			'uploaded[News_image]|mime_in[News_image,image/jpg,image/jpeg,image/gif,image/png]|max_size[News_image,1500]'
+		]); // Memvalidasi Gambar yang di upload
+
+		if ($validation == false) {
+			$data = array(
+
+				'News_keyword' => $this->request->getPost('News_keyword'),
+				'News_description' => $this->request->getPost('News_description'),
+				'News_slug'  => $this->request->getPost('News_slug'),
+				'News_title' => $this->request->getPost('News_title'),
+				'News_date' => $this->request->getPost('News_date'),
+				'News_writer' => $this->request->getPost('News_writer'),
+				'News_editor'  => $this->request->getPost('News_editor'),
+				'News_content' => $this->request->getPost('News_content'),
+				'News_source' => $this->request->getPost('News_source'),
+				'News_tags' => $this->request->getPost('News_tags'),
+				'News_status' => $this->request->getPost('News_status'),
+				'News_category' => $this->request->getPost('News_category'),
+
+			);
+		} else {
+			$upload = $this->request->getFile('News_image');
+			$filename = $upload->getName();
+
+			$upload->move(WRITEPATH . '../public/assets/images/');
+			$data = array(
+
+				'News_keyword' => $this->request->getPost('News_keyword'),
+				'News_description' => $this->request->getPost('News_description'),
+				'News_slug'  => $this->request->getPost('News_slug'),
+				'News_title' => $this->request->getPost('News_title'),
+				'News_date' => $this->request->getPost('News_date'),
+				'News_writer' => $this->request->getPost('News_writer'),
+				'News_editor'  => $this->request->getPost('News_editor'),
+				'News_category' => $this->request->getPost('News_category'),
+				'News_content' => $this->request->getPost('News_content'),
+				'News_source' => $this->request->getPost('News_source'),
+				'News_tags' => $this->request->getPost('News_tags'),
+				'News_status' => $this->request->getPost('News_status'),
+				'News_image' => $filename
+
+			);
+		}
+		
+		$model->addNews($data);
+		if ($data == !null) {
+			$session->setFlashdata('msg', 'Blog Berhasil Ditambahkan');
+			return redirect()->to('/dashboard/bloglist');
+		} else {
+			$session->setFlashdata('err', '*Data yang anda masukan salah');
+			return redirect()->to('/dashboard/bloglist');
+		}
 	}
 	public function blogSave()
 	{
@@ -47,7 +108,7 @@ class Dashboard extends BaseController
 	}
 	public function blogDelete()
 	{
-	// $data['judul'] = 'Dashboard| Delete Blog';
+		// $data['judul'] = 'Dashboard| Delete Blog';
 		// $data['user'] = "Agoes Djanar";
 		// $data['breadcrumb'] =" / Hapus Blog";
 		echo '(Blog Telah Dihapus )';
@@ -132,18 +193,19 @@ class Dashboard extends BaseController
 	}
 
 	public function updateGallery()
-	{   $session= session();
+	{
+		$session = session();
 		$model = new GalleryModel();
 		if ($this->request->getMethod() !== 'post') {
 			return redirect()->to('dashboard');
 		}
 		$id = $this->request->getPost('gallery_id');
-		
+
 		$validation = $this->validate([
 			'gallery_image' =>
 			'uploaded[gallery_image]|mime_in[gallery_image,image/jpg,image/jpeg,image/gif,image/png]|max_size[gallery_image,2000]'
 		]); // Memvalidasi Gambar yang di upload
-		
+
 		if ($validation == FALSE) {
 			$data = array(
 				'gallery_judul'  => $this->request->getPost('gallery_judul'),
@@ -154,11 +216,11 @@ class Dashboard extends BaseController
 				'gallery_sertilengkap' => $this->request->getPost('gallery_sertilengkap')
 			);
 		} else {
-			
+
 			$path = '../public/assets/images';
-			$gambar=$this->request->getFile('gallery_image'); 
+			$gambar = $this->request->getFile('gallery_image');
 			@unlink($path, $gambar);
-			
+
 			$upload = $this->request->getFile('gallery_image');
 			$filename = $upload->getName();
 
@@ -174,16 +236,15 @@ class Dashboard extends BaseController
 			);
 		}
 
-		$model->editGallery($id,$data);
-		
+		$model->editGallery($id, $data);
+
 		if ($model == TRUE) {
 			$session->setFlashdata('Update', 'Wajah Plastik Berhasil Diupdate');
 			return redirect()->to('/dashboard/galleryList');
 		} else {
 			$session->setFlashdata('err', '*link yang anda masukan salah');
 			return redirect()->to('/dashboard/galleryList');
-		}
-	;
+		};
 	}
 
 

@@ -64,6 +64,10 @@ class News extends Migration
 				'type'       => 'VARCHAR',
 				'constraint' => '255',
 			],
+			'News_category'       => [
+				'type'       => 'VARCHAR',
+				'constraint' => '255',
+			],
 			
 			'created_date datetime default current_timestamp',
 			'updated_date datetime default current_timestamp on update current_timestamp',

@@ -16,7 +16,7 @@
       <a href='/' target='_self' class=" transition-all mr-5 hover:text-red-600 hover:underline">Home</a>
       <a href='/#about' class=" transition-all mr-5 hover:text-red-600 hover:underline">About us</a>
       <a href='/gallery' class=" transition-all mr-5 hover:text-red-600 hover:underline">Gallery</a>
-      <a href='/#news' class=" transition-all mr-5 hover:text-red-600 hover:underline">News</a>
+      <a href='/news' class=" transition-all mr-5 hover:text-red-600 hover:underline">News</a>
       <a class=" transition-all mr-5 hover:text-red-600 hover:underline">Achievement</a>
       <a href='/youtube' class="transition-all mr-5 hover:text-red-600 hover:underline">Youtube</a>
     </nav>
