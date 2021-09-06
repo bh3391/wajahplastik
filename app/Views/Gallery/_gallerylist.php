@@ -115,7 +115,7 @@
 
                     <td class="py-3 px-6 text-center"><?= $row["gallery_kategori"] ?></td>
                     <td class="py-1 px-1 text-center ">
-                        <a href="../gallery/details/<?= $row["gallery_id"] ?>"><i class="px-3 far fa-eye"></i></a>
+                        <a href="../gallery/details/<?= $row["gallery_slug"] ?>"><i class="px-3 far fa-eye"></i></a>
                         <a href="galleryEdit/<?= $row["gallery_id"] ?>"><i class="px-3 far fa-edit"></i></a>
                         <a href="/dashboard/galleryDelete/<?= $row["gallery_id"] ?>"><i class="px-3 far fa-trash-alt"></i></a>
 

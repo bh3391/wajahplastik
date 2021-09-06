@@ -48,7 +48,7 @@
                 <img loading="lazy"class=" bg-gray-800 p-1 " src="../assets/images/<?= $row["gallery_image"] ?>" alt="dummy">
                 <h1 class="p-1  font-semibold uppercase"><?= $row["gallery_judul"] ?></h1>
                 <h2>No: <?= $row["gallery_sertilengkap"] ?></h2>
-                <a href='gallery/details/<?= $row["gallery_sertifikatid"] ?>'>show details</a>
+                <a href='gallery/details/<?= $row["gallery_slug"] ?>'>show details</a>
         </div>
         <?php endforeach; ?>
     </div>

@@ -68,7 +68,7 @@ class GalleryModel extends Model
 	}
 	public function PilihGalery($id)
 	{
-		$query = $this->getWhere(['gallery_id' => $id]);
+		$query = $this->getWhere(['gallery_slug' => $id]);
 		return $query;
 	}
 

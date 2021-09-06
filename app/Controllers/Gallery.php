@@ -24,8 +24,9 @@ class Gallery extends BaseController
 		$model = new GalleryModel();
 		$data ['judul']= 'Wajah Plastik&trade: ';
 		
-		$data['gallery'] = $model->PilihGalery($id)->getRow(); 
-		// dd($data);
+		$gallery= $model->PilihGalery($id)->getRow(); 
+		$data['gallery']= $gallery;
+		
 		echo view('Gallery/details',$data);
 		
 	}

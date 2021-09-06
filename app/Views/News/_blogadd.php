@@ -17,10 +17,7 @@
 					</div>
 					<div class="col-md-12">
 
-						<div class="form-group">
-							<label class="block mb-2 text-md text-gray-600 ">url slug</label>
-							<input required type="text" name="News_slug" class="form-control w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 " required>
-						</div>
+						
 					</div>
 				</div>
 				<div class="col-md-12 p-2">

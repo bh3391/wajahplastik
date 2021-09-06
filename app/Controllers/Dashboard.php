@@ -48,13 +48,14 @@ class Dashboard extends BaseController
 			'News_image' =>
 			'uploaded[News_image]|mime_in[News_image,image/jpg,image/jpeg,image/gif,image/png]|max_size[News_image,1500]'
 		]); // Memvalidasi Gambar yang di upload
-
+		$title = $this->request->getPost('News_title');
+		$slug = url_title($title, '-', TRUE);
 		if ($validation == false) {
 			$data = array(
 
 				'News_keyword' => $this->request->getPost('News_keyword'),
 				'News_description' => $this->request->getPost('News_description'),
-				'News_slug'  => $this->request->getPost('News_slug'),
+				'News_slug'  => $slug,
 				'News_title' => $this->request->getPost('News_title'),
 				'News_date' => $this->request->getPost('News_date'),
 				'News_writer' => $this->request->getPost('News_writer'),
@@ -75,7 +76,7 @@ class Dashboard extends BaseController
 
 				'News_keyword' => $this->request->getPost('News_keyword'),
 				'News_description' => $this->request->getPost('News_description'),
-				'News_slug'  => $this->request->getPost('News_slug'),
+				'News_slug'  => $slug,
 				'News_title' => $this->request->getPost('News_title'),
 				'News_date' => $this->request->getPost('News_date'),
 				'News_writer' => $this->request->getPost('News_writer'),
@@ -259,6 +260,8 @@ class Dashboard extends BaseController
 			'gallery_image' =>
 			'uploaded[gallery_image]|mime_in[gallery_image,image/jpg,image/jpeg,image/gif,image/png]|max_size[gallery_image,2000]'
 		]); // Memvalidasi Gambar yang di upload
+		$title      = $this->request->getPost('gallery_judul');
+        $slug       = url_title($title, '-', TRUE);
 
 		if ($validation == FALSE) {
 			$data = array(
@@ -267,11 +270,13 @@ class Dashboard extends BaseController
 				'gallery_harga' => $this->request->getPost('gallery_harga'),
 				'gallery_kategori' => $this->request->getPost('gallery_kategori'),
 				'gallery_sertifikatid' => $this->request->getPost('gallery_sertifikatid'),
-				'gallery_sertlengkap' => $this->request->getPost('gallery_sertilengkap')
+				'gallery_sertlengkap' => $this->request->getPost('gallery_sertilengkap'),
+				'gallery_slug' => $slug
 			);
 		} else {
 			$upload = $this->request->getFile('gallery_image');
 			$filename = $upload->getName();
+			
 
 			$upload->move(WRITEPATH . '../public/assets/images/');
 
@@ -282,7 +287,8 @@ class Dashboard extends BaseController
 				'gallery_kategori' => $this->request->getPost('gallery_kategori'),
 				'gallery_sertifikatid' => $this->request->getPost('gallery_sertifikatid'),
 				'gallery_sertilengkap' => $this->request->getPost('gallery_sertilengkap'),
-				'gallery_image' => $filename
+				'gallery_image' => $filename,
+				'gallery_slug' => $slug
 			);
 		}
 
