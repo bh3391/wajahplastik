@@ -11,7 +11,7 @@ class News extends BaseController
 	{
 		
 		$model = new NewsModel();
-		$News = $model->getNews();
+		$News = $model->getPublish();
 		$data = [
 			'judul' => 'Berita dan Publikasi',
 			
@@ -19,10 +19,17 @@ class News extends BaseController
 		];
 		echo view('News/_list',$data);
 	}
-	public function blogView ()
+	public function artikel($id)
+
 	{
-		$data['judul'] ="Blog | Wajahplastik&trade;" ;
-		return view('News/_blogview',$data);
+		$model = new NewsModel();
+		$data ['judul']= 'Wajah Plastik&trade: ';
+		
+		$News= $model->PilihNews($id)->getRow(); 
+		
+		$data['News']= $News;
+		echo view('News/_blogview',$data);
+		
 	}
 
 	// Admin Akses

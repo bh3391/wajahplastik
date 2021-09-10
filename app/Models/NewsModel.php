@@ -36,8 +36,8 @@ class NewsModel extends Model
 	// Dates
 	protected $useTimestamps        = true;
 	protected $dateFormat           = 'datetime';
-	protected $createdField         = 'created_at';
-	protected $updatedField         = 'updated_at';
+	protected $createdField         = 'created_date';
+	protected $updatedField         = 'updated_date';
 	protected $deletedField         = 'deleted_at';
 
 	// Validation
@@ -66,10 +66,27 @@ class NewsModel extends Model
 	{
 		return $this->findAll();
 	}
+	public function getPublish()
+	{
+		$query = $this->db->query("SELECT * FROM news where news_status = 'publish'");
+		$result = $query->getResultArray();
+		return $result;
+	}
 
 	public function addNews($data)
 	{
 		$query = $this->db->table($this->table)->insert($data);
 		return $query;
 	}
+	public function deleteNews($id)
+	{
+		$query = $this->db->table($this->table)->delete(array('News_id' => $id));
+		return $query;
+	}
+	public function PilihNews($id)
+	{
+		$query = $this->getWhere(['News_slug' => $id]);
+		return $query;
+	}
+	
 }

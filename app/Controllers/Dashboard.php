@@ -7,6 +7,7 @@ use App\Models\GalleryModel;
 use App\Models\YoutubeModel;
 use App\Models\NewsModel;
 
+
 class Dashboard extends BaseController
 {
 	public function index()
@@ -100,19 +101,34 @@ class Dashboard extends BaseController
 			return redirect()->to('/dashboard/bloglist');
 		}
 	}
-	public function blogSave()
+	public function blogPublish($id)
 	{
-		$data['judul'] = 'Dashboard| Add Blog';
-		$data['user'] = "Agoes Djanar";
-		$data['breadcrumb'] = " / Tambahkan Blog";
-		return view('News/_blogadd', $data);
+		$session = session();
+		$data = ['News_status' => 'publish']; 
+		$model = new NewsModel();
+		$model -> update($id,$data);
+		$session->setFlashdata('Publish', "Blog Berhasil Di Publish ");
+		return redirect()->to('/dashboard/blogList');
+		
+
 	}
-	public function blogDelete()
+	public function blogDelete($id)
 	{
-		// $data['judul'] = 'Dashboard| Delete Blog';
-		// $data['user'] = "Agoes Djanar";
-		// $data['breadcrumb'] =" / Hapus Blog";
-		echo '(Blog Telah Dihapus )';
+		$session = session();
+		$model = new NewsModel(); 
+		$model->deleteNews($id); 
+		$session->setFlashdata('Hapus', "Blog Berhasil Dihapus");
+		return redirect()->to('/dashboard/blogList');
+		
+	}
+	public function blogPreview($id)
+	{
+		$model = new NewsModel();
+		$data ['judul']= 'Wajah Plastik&trade: ';
+		
+		$News= $model->PilihNews($id)->getRow(); 
+		$data['News']= $News;
+		echo view('News/_blogview',$data);
 	}
 
 
@@ -310,4 +326,6 @@ class Dashboard extends BaseController
 		$session->setFlashdata('Hapus', "Video Berhasil Dihapus");
 		return redirect()->to('dashboard/galleryList');
 	}
+
+	
 }
