@@ -27,12 +27,12 @@
 
 <body class="bg-gray-50">
 
-    <div style="height:300%" class="side-nav inline h-full bg-gray-100 w-full md:w-60 shadow-lg   absolute text-left">
+    <div style="height:300%" class=" side-nav inline h-full bg-gray-100 w-full md:w-60 shadow-lg   absolute  text-left">
 
 
         <!-- Bagian Menu -->
 
-        <div x-data="{ open: true }" class="flex-grow md:block pb-4 md:pb-0 text-md h-screen">
+        <div x-data="{ open: true }" class="flex-grow md:block pb-4 md:pb-0 text-md h-screen absolute z-10">
             <div href="/dashboard" class="flex flex-row flex-growtitle-font font-medium items-center text-gray-900 mb-4 md:mb-0">
                 <img src="<?= base_url("/assets/img/bj.jpg") ?>" alt="logo" class="h-12 w-12 rounded-full">
                 <div class="p-1 text-xl">
@@ -41,7 +41,7 @@
                 <button @click="open= !open "><i class="fas fa-bars p-2 m-1"></i></button>
             </div>
             <hr>
-            <div div x-show="open">
+            <div div x-show="open" >
                 <div>
                     <h1 class="pb-4 text-left p-2"><i class="fas fa-user-circle p-2"></i>Hello! <?= $user ?></h1>
                 </div>

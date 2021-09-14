@@ -39,6 +39,16 @@ class Dashboard extends BaseController
 		$data['breadcrumb'] = " / Tambahkan Blog";
 		return view('News/_blogadd', $data);
 	}
+	public function blogEditform($id)
+	{
+		$data['judul'] = 'Dashboard | Tambahkan Blog';
+		$data['user'] = "Agoes Djanar";
+		$data['breadcrumb'] = " / Edit Blog";
+		$model = new NewsModel();
+		$News = $model->PilihNews($id)->getRow(); 
+		$data['News'] = ($News); 
+		echo view('News/_blogedit', $data);
+	}
 
 	public function blogAdd()
 	{
@@ -51,11 +61,13 @@ class Dashboard extends BaseController
 		]); // Memvalidasi Gambar yang di upload
 		$title = $this->request->getPost('News_title');
 		$slug = url_title($title, '-', TRUE);
+		$content = $this->request->getPost('News_content');
+		$description = word_limiter($content,100);
 		if ($validation == false) {
 			$data = array(
 
 				'News_keyword' => $this->request->getPost('News_keyword'),
-				'News_description' => $this->request->getPost('News_description'),
+				'News_description' => $description,
 				'News_slug'  => $slug,
 				'News_title' => $this->request->getPost('News_title'),
 				'News_date' => $this->request->getPost('News_date'),
@@ -76,7 +88,7 @@ class Dashboard extends BaseController
 			$data = array(
 
 				'News_keyword' => $this->request->getPost('News_keyword'),
-				'News_description' => $this->request->getPost('News_description'),
+				'News_description' => $description,
 				'News_slug'  => $slug,
 				'News_title' => $this->request->getPost('News_title'),
 				'News_date' => $this->request->getPost('News_date'),
@@ -95,6 +107,75 @@ class Dashboard extends BaseController
 		$model->addNews($data);
 		if ($data == !null) {
 			$session->setFlashdata('msg', 'Blog Berhasil Ditambahkan');
+			return redirect()->to('/dashboard/bloglist');
+		} else {
+			$session->setFlashdata('err', '*Data yang anda masukan salah');
+			return redirect()->to('/dashboard/bloglist');
+		}
+	}
+	public function blogUpdate()
+	{
+
+		$session = session();
+		$model = new NewsModel();
+		$validation = $this->validate([
+			'News_image' =>
+			'uploaded[News_image]|mime_in[News_image,image/jpg,image/jpeg,image/gif,image/png]|max_size[News_image,1500]'
+		]); // Memvalidasi Gambar yang di upload
+		$id = $this->request->getPost('News_id');
+		$title = $this->request->getPost('News_title');
+		$slug = url_title($title, '-', TRUE);
+		$content = $this->request->getPost('News_content');
+		$description = substr($content,0,500); 
+		if ($validation == false) {
+			$data = array(
+
+				'News_keyword' => $this->request->getPost('News_keyword'),
+				'News_description' => $description,
+				'News_slug'  => $slug,
+				'News_title' => $this->request->getPost('News_title'),
+				'News_date' => $this->request->getPost('News_date'),
+				'News_writer' => $this->request->getPost('News_writer'),
+				'News_editor'  => $this->request->getPost('News_editor'),
+				'News_content' => $this->request->getPost('News_content'),
+				'News_source' => $this->request->getPost('News_source'),
+				'News_tags' => $this->request->getPost('News_tags'),
+				'News_status' => $this->request->getPost('News_status'),
+				'News_category' => $this->request->getPost('News_category'),
+
+			);
+		} else {
+			$path = '../public/assets/images/';
+			$gambar = $this->request->getFile('News_image');
+			@unlink($path, $gambar);
+
+			
+			$upload = $this->request->getFile('News_image');
+			$filename = $upload->getName();
+
+			$upload->move(WRITEPATH . '../public/assets/images/');
+			$data = array(
+
+				'News_keyword' => $this->request->getPost('News_keyword'),
+				'News_description' => $description,
+				'News_slug'  => $slug,
+				'News_title' => $this->request->getPost('News_title'),
+				'News_date' => $this->request->getPost('News_date'),
+				'News_writer' => $this->request->getPost('News_writer'),
+				'News_editor'  => $this->request->getPost('News_editor'),
+				'News_category' => $this->request->getPost('News_category'),
+				'News_content' => $this->request->getPost('News_content'),
+				'News_source' => $this->request->getPost('News_source'),
+				'News_tags' => $this->request->getPost('News_tags'),
+				'News_status' => $this->request->getPost('News_status'),
+				'News_image' => $filename
+
+			);
+		}
+		
+		$model->updateNews($data,$id);
+		if ($data == !null) {
+			$session->setFlashdata('Update', 'Update Berhasil ');
 			return redirect()->to('/dashboard/bloglist');
 		} else {
 			$session->setFlashdata('err', '*Data yang anda masukan salah');

@@ -66,9 +66,27 @@ class NewsModel extends Model
 	{
 		return $this->findAll();
 	}
+	public function getCategory()
+	{
+		$query = $this->db->query("SELECT news_category from News");
+		$result = $query->getResultArray();
+		return $result;
+	}
+	public function getTitle()
+	{
+		$query = $this->db->query("SELECT news_title,news_slug,news_keyword,news_tags,news_id from News ORDER BY news_id DESC 	LIMIT 10");
+		$result = $query->getResultArray();
+		return $result;
+	}
+	public function getTags()
+	{
+		$query = $this->db->query("SELECT  from News");
+		$result = $query->getResultArray();
+		return $result;
+	}
 	public function getPublish()
 	{
-		$query = $this->db->query("SELECT * FROM news where news_status = 'publish'");
+		$query = $this->db->query("SELECT * FROM News where news_status = 'publish'");
 		$result = $query->getResultArray();
 		return $result;
 	}
@@ -76,6 +94,11 @@ class NewsModel extends Model
 	public function addNews($data)
 	{
 		$query = $this->db->table($this->table)->insert($data);
+		return $query;
+	}
+	public function updateNews($data,$id)
+	{
+		$query = $this->db->table($this->table)->update($data, array('News_id' => $id));
 		return $query;
 	}
 	public function deleteNews($id)

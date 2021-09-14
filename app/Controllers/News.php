@@ -15,19 +15,24 @@ class News extends BaseController
 		$data = [
 			'judul' => 'Berita dan Publikasi',
 			
-			'News' => ($News)
+			'News' => $News
 		];
+		
 		echo view('News/_list',$data);
 	}
 	public function artikel($id)
 
 	{
 		$model = new NewsModel();
-		$data ['judul']= 'Wajah Plastik&trade: ';
+		$data ['judul']= 'Wajah Plastik&trade; ';
 		
+		$title = $model->getTitle();
+
 		$News= $model->PilihNews($id)->getRow(); 
 		
 		$data['News']= $News;
+		
+		$data['title'] = ($title); 
 		echo view('News/_blogview',$data);
 		
 	}

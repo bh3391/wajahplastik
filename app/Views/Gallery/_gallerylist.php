@@ -16,8 +16,8 @@
     <?php if (session()->getFlashdata('err')) : ?>
         <div class="mt-4 alert text-white  p-2 bg-red-400 rounded-lg shadow text-sm text-left"><i class="fas fa-trash-alt p-2"></i><?= session()->getFlashdata('err') ?></div>
     <?php endif; ?>
-    <form x-show="open " x-transition method="post" action="<?= base_url(); ?>/Dashboard/galleryAdd" enctype="multipart/form-data" class="w-2/3 ">
-        <div class="block items-center  p-2">
+    <form target="_top"x-show="open " x-transition x-transition:enter.duration.500ms x-transition:leave.duration.400ms method="post" action="<?= base_url(); ?>/Dashboard/galleryAdd" enctype="multipart/form-data">
+        <div class="block items-center absolute z-10  mx-auto mt-2 bg-gray-800 rounded-xl bg-opacity-60 backdrop-filter backdrop-blur-lg p-10">
             <input required class=" border-b-2 border-gray-300 my-2 focus:outline-none bg-gray-50 block w-full py-2 px-4 rounded-lg " type="text" placeholder="Masukan Judul Karya" name="gallery_judul">
             <textarea required class="bg-transparent border-2 border-gray-300 my-2 focus:outline-none bg-gray-50 block w-full py-2 px-4 rounded-lg " type="textarea" placeholder="Deskripsi" name="gallery_deskripsi"></textarea>
             <input required class="bg-transparent border-2 border-gray-300 my-2 focus:outline-none bg-gray-50 block w-full py-2 px-4 rounded-lg " type="number" placeholder="Harga" name="gallery_harga">
@@ -35,6 +35,9 @@
                     <input required type="file" name="gallery_image" class="form-control">
                 </div>
             </div>
+            <button @click="open=!open" class="flex-shrink-0 bg-red-600 hover:bg-red-700 border-red-600 hover:border-red-700 text-sm border-4 text-white py-1 px-2 rounded">
+                Batal
+            </button>
             <button class="flex-shrink-0 bg-green-500 hover:bg-green-700 border-green-500 hover:border-green-700 text-sm border-4 text-white py-1 px-2 rounded" type="submit">
                 Submit
             </button>

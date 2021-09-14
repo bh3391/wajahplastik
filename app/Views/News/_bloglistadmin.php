@@ -21,6 +21,9 @@
         <?php if (session()->getFlashdata('Publish')) : ?>
                 <div class="alert text-yellow-800  p-2 bg-yellow-500 rounded-sm shadow text-sm text-left"><i class="fas fa-check p-2"></i><?= session()->getFlashdata('Publish') ?></div>
             <?php endif; ?>
+            <?php if (session()->getFlashdata('Update')) : ?>
+                <div class="alert text-blue-200  p-2 bg-blue-500 rounded-sm shadow text-sm text-left"><i class="fas fa-check p-2"></i><?= session()->getFlashdata('Update') ?></div>
+            <?php endif; ?>
             <?php if (session()->getFlashdata('msg')) : ?>
                 <div class="alert text-white  p-2 bg-green-500 rounded-sm shadow text-sm text-left"><i class="fas fa-check p-2"></i><?= session()->getFlashdata('msg') ?></div>
             <?php endif; ?>
@@ -54,8 +57,8 @@
 
                         <td class="py-3 px-6 text-center"><a href="/dashboard/blogPublish/<?=$row["News_id"];?>"><?=$row['News_status']?></a></td>
                         <td class="py-1 px-1 text-center ">
-                            <a href="../News/artikel/<?=$row["News_slug"];?>"><i class="p-3 far fa-eye hover:bg-gray-500 rounded-lg hover:text-gray-50"></i></a>
-                            <a href="/dashboard/blogEdit"><i class="p-3 far fa-edit hover:bg-blue-500 rounded-lg hover:text-gray-50"></i></a>
+                            <a target="_blank" href="../News/artikel/<?=$row["News_slug"];?>"><i class="p-3 far fa-eye hover:bg-gray-500 rounded-lg hover:text-gray-50"></i></a>
+                            <a href="/dashboard/blogeditform/<?=$row["News_slug"];?>"><i class="p-3 far fa-edit hover:bg-blue-500 rounded-lg hover:text-gray-50"></i></a>
                             <a href=/dashboard/blogDelete/<?=$row["News_id"];?>><i class="p-3 far fa-trash-alt hover:bg-red-600 rounded-lg hover:text-gray-50"></i></a>
 
 
