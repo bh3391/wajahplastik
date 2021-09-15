@@ -1,7 +1,7 @@
 <?= $this->extend('_layouts') ?>
 <?= $this->section('content') ?>
-<?= view ('components/_preloader')?>
-<div class="md:flex md:flex-row">
+
+<div class="md:flex md:flex-row border">
     
     <div class="container md:w-4/6 bg-white h-auto mx-auto border-r m-1 p-7 md:px-20 md:py-10">
         <!-- Bagian Blog -->
@@ -15,7 +15,7 @@
         <div class="judul my-3">
             <h1 class="text-2xl font-bold text-left"><?= $News->News_title ?></h1>
         </div>
-        <div class="tanggal inline text-gray-600 italic">
+        <div class="tanggal inline text-xs text-gray-600 italic">
             <?php 
             $originalDate = $News->News_date;
             $newDate = date('d F Y', strtotime($originalDate));

@@ -6,7 +6,7 @@
     <?= view('components/_hero')?><br>
     <?= view('components/_aboutUs')?>
     <hr>
-    <?= view('components/_step')?>
+    <?= view('components/_value')?>
     <hr>
     <?= view('components/_gallery')?>
     <hr>
@@ -14,7 +14,7 @@
     <hr>
     <?= view('components/_youtube')?>
     <hr>
-    <?= view('components/_testimonial')?>
+    <?= view('components/_achievement')?>
     <?= view('components/_cta')?>
     <hr>
     <?= view('components/_team')?>
