@@ -17,6 +17,7 @@ class Register extends BaseController
     {
         //include helper form
 		$data['judul'] = 'Register Admin';
+        $data['user'] = '';
         helper(['form']);
         //set rules validation form
         $rules = [

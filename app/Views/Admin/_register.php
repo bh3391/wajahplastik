@@ -1,8 +1,8 @@
-<?= $this->extend('_layoutsAdmin') ?>
+<?= $this->extend('_layouts') ?>
 <?= $this->section('content') ?>
 
 <div class="flex flex-1 my-10  items-center justify-center">
-    <div class="border-2 border-gray-200 p-5 rounded-lg">
+    <div class="border-2 border-gray-200  bg-gray-300 p-5 rounded-lg">
         <h1 class="font-bold tracking-wider text-2xl mb-8  w-full text-gray-600">Daftar</h1>
         <?php if (isset($validation)) : ?>
             <div class="text-red-600"><?= $validation->listErrors() ?></div>

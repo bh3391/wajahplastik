@@ -37,13 +37,6 @@
 
 
 </body>
-<script>
-    var source = new EventSource("/stream");
-    source.onmessage = function(event) {
-        if (event.data == 'reload') {
-            location.reload()
-        }
-    }
-</script>
+
 
 </html>
