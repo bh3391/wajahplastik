@@ -14,10 +14,10 @@
     <nav x-show="open" x-transition.duration.1000ms x-transition.scale.80 x-transition.delay.50ms @click.away="open=false" id="menu" class=" transition-all md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-col md:flex-row flex-wrap items-left md:items-center text-base justify-center">
 
       <a href='/' target='_self' class=" transition-all mr-5 hover:text-red-600 hover:underline">Home</a>
-      <a href='/#about' class=" transition-all mr-5 hover:text-red-600 hover:underline">About us</a>
+      <a href='/about' class=" transition-all mr-5 hover:text-red-600 hover:underline">About us</a>
       <a href='/gallery' class=" transition-all mr-5 hover:text-red-600 hover:underline">Gallery</a>
       <a href='/news' class=" transition-all mr-5 hover:text-red-600 hover:underline">News</a>
-      <a class=" transition-all mr-5 hover:text-red-600 hover:underline">Achievement</a>
+      <a href='/Achievement'class=" transition-all mr-5 hover:text-red-600 hover:underline">Achievement</a>
       <a href='/youtube' class="transition-all mr-5 hover:text-red-600 hover:underline">Youtube</a>
     </nav>
   </div>

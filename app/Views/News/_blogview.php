@@ -1,4 +1,4 @@
-<?= $this->extend('_layouts') ?>
+<?= $this->extend('_layoutsblog') ?>
 <?= $this->section('content') ?>
 
 <div class="md:flex md:flex-row border">
@@ -58,20 +58,21 @@
     </div>
     <div class="container md:w-2/6 bg-white h-screen md:mx-auto p-5">
         <!-- Bagian side untuk iklan -->
-        <div class="grid ">
-            <h1 class="text-xl font-bold text-gray-700">Artikel Terbaru</h1>
+        <iframe class="p-2 m-2"src="https://calendar.google.com/calendar/embed?height=300&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FMakassar&src=MHZ0cGJjYTVtZ20wYWpsMnFic2hvZGJkMmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23F4511E&showTitle=0&showNav=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=MONTH&title" style="border:solid 1px #777" width="400" height="300" frameborder="0" scrolling="no"></iframe>
+        <div class="grid  ">
+                    <h1 class=" underline  text-xl font-bold my-2 text-gray-700"><i class="fas fa-rss"></i>  Artikel Terbaru</h1>
             <?php foreach ($title as $row) : ?>
                 <a href="<?= base_url() ?>/News/artikel/<?= $row['news_slug'] ?>" class=" my-1  text-left text-bold text-gray-700 px-1 hover:underline shadow "><?= $row['news_title'] ?></a>
             <?php endforeach; ?>
         </div>
-        <div class="Tags">
-            <h1 class="text-xl font-bold text-gray-700">#TAGS</h1>
+        <div class="Tags my-3">
+            <h1 class=" underline text-xl font-bold text-gray-700"> <i class="fas fa-hashtag"></i>  TAGS</h1>
             <?php foreach ($title as $row) : ?>
                 <a href="<?= base_url() ?>/News" class="bg-gray-200 text-gray-800 px-1 rounded-lg shadow flex-row">#<?= $row['news_tags'] ?></a>
             <?php endforeach; ?>
         </div>
-        <div class="Kategori">
-            <h1 class="text-xl font-bold text-gray-700">Keyword</h1>
+        <div class="Kategori my-3">
+            <h1 class=" underline text-xl font-bold text-gray-700"><i class="fas fa-key"></i>  Keyword</h1>
             <?php foreach ($title as $row) : ?>
                 <a href="<?= base_url() ?>/News" class="flex-row bg-yellow-200 text-bold text-yellow-800 p-1 rounded-lg shadow "><?= $row['news_keyword'] ?></a>
             <?php endforeach; ?>

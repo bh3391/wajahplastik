@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="Description" content="Enter your description here" />
     <link href="<?= base_url() ?>/assets/css/output.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/favicon.ico" rel="icon" type="image/gif">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>

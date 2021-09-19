@@ -145,7 +145,7 @@ class Dashboard extends BaseController
 
 			);
 		} else {
-			$path = '../public/assets/images/';
+			$path = '../<?=base_url()?>/assets/images/';
 			$gambar = $this->request->getFile('News_image');
 			@unlink($path, $gambar);
 
@@ -153,7 +153,7 @@ class Dashboard extends BaseController
 			$upload = $this->request->getFile('News_image');
 			$filename = $upload->getName();
 
-			$upload->move(WRITEPATH . '../public/assets/images/');
+			$upload->move(WRITEPATH . '../<?=base_url()?>/assets/images/');
 			$data = array(
 
 				'News_keyword' => $this->request->getPost('News_keyword'),
@@ -315,14 +315,14 @@ class Dashboard extends BaseController
 			);
 		} else {
 
-			$path = '../public/assets/images';
+			$path = '../<?=base_url()?>/assets/images';
 			$gambar = $this->request->getFile('gallery_image');
 			@unlink($path, $gambar);
 
 			$upload = $this->request->getFile('gallery_image');
 			$filename = $upload->getName();
 
-			$upload->move(WRITEPATH . '../public/assets/images/');
+			$upload->move(WRITEPATH . '../<?=base_url()?>/assets/images/');
 			$data = array(
 				'gallery_judul'  => $this->request->getPost('gallery_judul'),
 				'gallery_deskripsi' => $this->request->getPost('gallery_deskripsi'),

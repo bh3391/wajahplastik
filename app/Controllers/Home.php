@@ -24,4 +24,8 @@ class Home extends BaseController
 
 		echo view('home',$data);
 	}
+
+	
+
+	
 }
