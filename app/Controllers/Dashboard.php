@@ -62,7 +62,7 @@ class Dashboard extends BaseController
 		$title = $this->request->getPost('News_title');
 		$slug = url_title($title, '-', TRUE);
 		$content = $this->request->getPost('News_content');
-		$description = word_limiter($content,100);
+		$description = substr($content,0,500);
 		if ($validation == false) {
 			$data = array(
 

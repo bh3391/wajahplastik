@@ -14,6 +14,7 @@ class Home extends BaseController
 	{	$model1 = new YoutubeModel();
 		$model2 = new  GalleryModel();
 		$model3 = new  NewsModel();
+		$achievement= $model3->getAchievement();
 		$tematik = $model2->getTematik();
 		$youtube = $model1->getYoutube();
 		$news = $model3->getTitle();
@@ -21,6 +22,7 @@ class Home extends BaseController
 		$data['youtube'] =($youtube);
 		$data['news'] =($news);
 		$data['tematik'] =($tematik); 
+		$data['achievement'] =$achievement;
 
 		echo view('home',$data);
 	}

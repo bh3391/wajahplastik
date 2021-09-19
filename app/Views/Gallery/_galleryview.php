@@ -40,11 +40,11 @@
         <?php endif; ?>
 
     
-    <div class=" flex flex-wrap justify-center md:grid grid-flow-row grid-cols-4  gap-5 mx-auto p-5 justify-items-center md:w-5/6 bg-gray-50 my-5 h-auto">
+    <div class=" flex flex-wrap justify-center md:grid grid-flow-row grid-cols-4   gap-5 mx-auto p-5 justify-items-center md:w-5/6 bg-gray-50 my-5 h-auto">
 
 
         <?php foreach ($gallery as $row) : ?>
-            <div class="text-center border-1 border-gray-800 shadow p-2 hover:bg-red-700 hover:text-white hover:rounded-lg ">
+            <div class="text-center border-1 rounded border-gray-800 shadow p-3  hover:bg-red-600 duration-1000 hover:text-white hover:rounded-md ">
                 <img loading="lazy"class=" bg-gray-800 p-1 " src="../assets/images/<?= $row["gallery_image"] ?>" alt="dummy">
                 <h1 class="p-1  font-semibold uppercase"><?= $row["gallery_judul"] ?></h1>
                 <h2>No: <?= $row["gallery_sertilengkap"] ?></h2>

@@ -80,6 +80,12 @@ class NewsModel extends Model
 		$result = $query->getResultArray();
 		return $result;
 	}
+	public function getAchievement()
+	{
+		$query = $this->db->query("SELECT * FROM News where news_category = 'achievement' ORDER BY news_id DESC 	LIMIT 9");
+		$result = $query->getResultArray();
+		return $result;
+	}
 
 	public function addNews($data)
 	{

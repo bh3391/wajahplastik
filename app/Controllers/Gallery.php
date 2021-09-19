@@ -22,7 +22,7 @@ class Gallery extends BaseController
 
 	{
 		$model = new GalleryModel();
-		$data ['judul']= 'Wajah Plastik&trade: ';
+		$data ['judul']= 'Wajah Plastik&trade; ';
 		
 		$gallery= $model->PilihGalery($id)->getRow(); 
 		$data['gallery']= $gallery;

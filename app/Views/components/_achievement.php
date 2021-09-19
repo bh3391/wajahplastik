@@ -1,36 +1,22 @@
 <section class="text-gray-600 body-font">
 
   <div class="container px-5 py-24 mx-auto">
-  <h1 class="sm:text-3xl text-2xl font-medium title-font mb-5 text-gray-900">Testimonial</h1>
-        <div class="h-1 w-20 bg-pink-500 rounded"></div>
-    <div class="flex flex-wrap -m-4">
-      <div class="lg:w-1/3 lg:mb-0 mb-6 p-4">
-        <div class="h-full text-center">
-          <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="https://dummyimage.com/302x302">
-          <p class="leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-          <span class="inline-block h-1 w-10 rounded bg-pink-500 mt-6 mb-4"></span>
-          <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">HOLDEN CAULFIELD</h2>
-          <p class="text-gray-500">Senior Product Designer</p>
+    <h1 class="sm:text-3xl text-2xl font-medium title-font mb-5 text-gray-900">Achievement</h1>
+    <div class="h-1 w-20 bg-red-600 rounded"></div>
+    <div class="flex flex-wrap m-4">
+      <?php foreach ($achievement as $a) :?>
+      <div class=" bg-gray-100 delay-500 duration-500 hover:bg-gray-900 hover:text-white hover:shadow-lg transition rounded-lg lg:w-1/3 lg:mb-0 mb-2 p-4">
+        <div class="h-full text-center ">
+          <img alt="testimonial" class="w-40 h-40 mb-8 object-cover object-center rounded-lg inline-block border-2 border-gray-200 bg-gray-100" src="<?=base_url()?>/assets/images/<?=$a['News_image']?>">
+          
+          
+          <h2 class="text-blue-600 font-medium title-font tracking-wider text-sm"><?=$a['News_category']?></h2>
+          <p class="text-red-600 font-bold"><?=$a['News_title']?></p>
+          <p class="leading-relaxed p-2 text-justify"><?=$a['News_description']?></p>
         </div>
       </div>
-      <div class="lg:w-1/3 lg:mb-0 mb-6 p-4">
-        <div class="h-full text-center">
-          <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="https://dummyimage.com/300x300">
-          <p class="leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-          <span class="inline-block h-1 w-10 rounded bg-pink-500 mt-6 mb-4"></span>
-          <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">ALPER KAMU</h2>
-          <p class="text-gray-500">UI Develeoper</p>
-        </div>
-      </div>
-      <div class="lg:w-1/3 lg:mb-0 p-4">
-        <div class="h-full text-center">
-          <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="https://dummyimage.com/305x305">
-          <p class="leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-          <span class="inline-block h-1 w-10 rounded bg-pink-500 mt-6 mb-4"></span>
-          <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">HENRY LETHAM</h2>
-          <p class="text-gray-500">CTO</p>
-        </div>
-      </div>
+      <?php endforeach ;?>
+
     </div>
   </div>
 </section>

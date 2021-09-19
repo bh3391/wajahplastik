@@ -4,7 +4,7 @@
     </div>
     <div class=" flex flex-col justify-center md:grid grid-flow grid-cols-3  gap-2 mx-auto p-5 justify-items-center  bg-gray-50 my-5">
     <?php foreach ($youtube as $row) : ?>   
-    <iframe loading="lazy" class="w-full h-auto p-1 md:p-5 hover:bg-blue-600 hover:rounded-lg md:h-72" src="https://www.youtube.com/embed/<?= $row['youtube_link']; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe loading="lazy" class="w-full h-auto p-2 md:p-5 duration-500 hover:bg-blue-600 hover:rounded-lg md:h-72" src="https://www.youtube.com/embed/<?= $row['youtube_link']; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <?php endforeach; ?>
     </div>
 
