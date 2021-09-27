@@ -404,7 +404,7 @@ class Dashboard extends BaseController
 		$model = new GalleryModel();
 
 		$model->HapusGallery($id);
-		$session->setFlashdata('Hapus', "Video Berhasil Dihapus");
+		$session->setFlashdata('Hapus', "Wajahplastik Berhasil Dihapus");
 		return redirect()->to('dashboard/galleryList');
 	}
 

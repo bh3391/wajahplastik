@@ -2,7 +2,10 @@
 
 <?= $this->section('content') ?>
 <div class="container mt-10 mx-auto">
-    <div class="judul text-center md:w-3/6 mx-auto ">
+    <div data-aos="fade-left"
+     data-aos-anchor="#example-anchor"
+     data-aos-offset="500"
+     data-aos-duration="500" class="judul text-center md:w-3/6 mx-auto ">
         <h1 class="text-2xl text-gray-800 font-bold mt-5">Youtube Made Oplas</h1>
         <p class="p-5 italic text-gray-500 font-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum aliquam, sit molestias magnam deserunt dignissimos ducimus ab, veniam temporibus debitis, quam distinctio</p>
     </div>

@@ -22,12 +22,12 @@
             <input required class=" border-b-2 border-gray-300 my-2 focus:outline-none bg-gray-50 block w-full py-2 px-4 rounded-lg " type="text" placeholder="Masukan Judul Karya" name="gallery_judul" value="<?= $gallery->gallery_judul ?>">
             <textarea required class="bg-transparent border-2 border-gray-300 my-2 focus:outline-none bg-gray-50 block w-full py-2 px-4 rounded-lg " type="textarea" placeholder="Deskripsi" name="gallery_deskripsi"><?= $gallery->gallery_deskripsi ?></textarea>
             <input required class="bg-transparent border-2 border-gray-300 my-2 focus:outline-none bg-gray-50 block w-full py-2 px-4 rounded-lg " type="number" placeholder="Harga" name="gallery_harga" value="<?= $gallery->gallery_harga ?>">
-            <input required class="bg-transparent border-2 border-gray-300 my-2 focus:outline-none bg-gray-50 block w-full py-2 px-4 rounded-lg " type="text" placeholder="Nomor Sertifikat" name="gallery_sertifikatid" value="<?= $gallery->gallery_sertifikatid ?>">
+            <input required class="bg-transparent border-2 border-gray-300 my-2 focus:outline-none bg-gray-50 block w-full py-2 px-4 rounded-lg " type="date" placeholder="Nomor Sertifikat" name="gallery_sertifikatid" value="<?= $gallery->gallery_sertifikatid ?>">
             <input required class="bg-transparent border-2 border-gray-300 my-2 focus:outline-none bg-gray-50 block w-full py-2 px-4 rounded-lg " type="text" placeholder="Nomor Sertifikat Lengkap" name="gallery_sertilengkap" value="<?= $gallery->gallery_sertilengkap ?>">
             <label for="Kategori">Pilih Kategori:</label>
             <select class="m-2 bg-gray-200 border-2 p-1 rounded-lg" id="kategori" name="gallery_kategori">
                 <option value="tematik">Tematik</option>
-                <option value="personal">Personal</option>
+                <option value="Custom">Custom</option>
             </select>
             <input type="hidden" name="gallery_id" value="<?= $gallery->gallery_id ?>" <div>
             <img src="<?= base_url() ?>/assets/images/<?= $gallery->gallery_image ?>" alt="<?= $gallery->gallery_image ?>" class="w-40">

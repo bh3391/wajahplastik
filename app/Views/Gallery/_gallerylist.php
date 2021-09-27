@@ -16,17 +16,20 @@
     <?php if (session()->getFlashdata('err')) : ?>
         <div class="mt-4 alert text-white  p-2 bg-red-400 rounded-lg shadow text-sm text-left"><i class="fas fa-trash-alt p-2"></i><?= session()->getFlashdata('err') ?></div>
     <?php endif; ?>
+    <?php if (session()->getFlashdata('Hapus')) : ?>
+        <div class="mt-4 alert text-white  p-2 bg-red-400 rounded-lg shadow text-sm text-left"><i class="fas fa-trash-alt p-2"></i><?= session()->getFlashdata('Hapus') ?></div>
+    <?php endif; ?>
     <form target="_top"x-show="open " x-transition x-transition:enter.duration.500ms x-transition:leave.duration.400ms method="post" action="<?= base_url(); ?>/Dashboard/galleryAdd" enctype="multipart/form-data">
         <div class="block items-center absolute z-10  mx-auto mt-2 bg-gray-800 rounded-xl bg-opacity-60 backdrop-filter backdrop-blur-lg p-10">
             <input required class=" border-b-2 border-gray-300 my-2 focus:outline-none bg-gray-50 block w-full py-2 px-4 rounded-lg " type="text" placeholder="Masukan Judul Karya" name="gallery_judul">
             <textarea required class="bg-transparent border-2 border-gray-300 my-2 focus:outline-none bg-gray-50 block w-full py-2 px-4 rounded-lg " type="textarea" placeholder="Deskripsi" name="gallery_deskripsi"></textarea>
             <input required class="bg-transparent border-2 border-gray-300 my-2 focus:outline-none bg-gray-50 block w-full py-2 px-4 rounded-lg " type="number" placeholder="Harga" name="gallery_harga">
-            <input required class="bg-transparent border-2 border-gray-300 my-2 focus:outline-none bg-gray-50 block w-full py-2 px-4 rounded-lg " type="text" placeholder="Nomor Sertifikat" name="gallery_sertifikatid">
+            <input required class="bg-transparent border-2 border-gray-300 my-2 focus:outline-none bg-gray-50 block w-full py-2 px-4 rounded-lg " type="date" placeholder="masukan tanggal" name="gallery_sertifikatid">
             <input required class="bg-transparent border-2 border-gray-300 my-2 focus:outline-none bg-gray-50 block w-full py-2 px-4 rounded-lg " type="text" placeholder="Nomor Sertifikat Lengkap" name="gallery_sertilengkap">
             <label for="Kategori">Pilih Kategori:</label>
             <select class="m-2 bg-gray-200 border-2 p-1 rounded-lg" id="kategori" name="gallery_kategori">
                 <option value="tematik">Tematik</option>
-                <option value="personal">Personal</option>
+                <option value="Custom">Custom</option>
             </select>
 
             <div class="col-md-12 p-3">
@@ -96,7 +99,7 @@
             <i class="material-icons">search</i>
         </button>
     </div>
-    <table class="min-w-max w-full table-auto css-serial table">
+    <table class="overscroll-y-auto min-w-max w-full table-auto css-serial table">
         <thead>
             <tr class="bg-gray-500 text-white uppercase text-sm leading-normal">
                 <th class="py-3 px-6 text-left">No</th>
@@ -114,7 +117,7 @@
                     <td class="py-3 px-6 text-center"></td>
                     <td class="py-3 px-6 text-left"><span class="inline-block w-2 h-2 mr-2 bg-green-600 rounded-full"></span> <?= $row["gallery_judul"] ?></td>
                     <td class="py-3 px-6 text-left"><?= $row["gallery_sertilengkap"] ?></td>
-                    <td class="py-3 px-6 text-left"><?= $row["created_date"] ?></td>
+                    <td class="py-3 px-6 text-left"><?= $row["gallery_sertifikatid"] ?></td>
 
                     <td class="py-3 px-6 text-center"><?= $row["gallery_kategori"] ?></td>
                     <td class="py-1 px-1 text-center ">

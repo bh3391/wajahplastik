@@ -1,4 +1,4 @@
-<div class="judul text-center m-1 md:w-3/6 mx-auto " id="youtube">
+<div <div  data-aos="fade-down" data-aos-duration="950" data-aos-delay="50" class="judul text-center m-1 md:w-3/6 mx-auto " id="youtube">
         <h1 class="text-2xl text-gray-800 font-bold mt-5">Youtube Made Oplas</h1>
         <p class="p-5 italic text-gray-500 font-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum aliquam, sit molestias magnam deserunt dignissimos ducimus ab, veniam temporibus debitis, quam distinctio</p>
     </div>

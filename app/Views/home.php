@@ -2,8 +2,10 @@
 
 
 <?= $this->section('content') ?>
+    <div class="div" data-aos="fade-in" data-aos-duration="3000">
+    <?= view('components/_hero')?>
+    </div><br>
     
-    <?= view('components/_hero')?><br>
     <?= view('components/_aboutUs')?>
     <hr>
     <?= view('components/_value')?>

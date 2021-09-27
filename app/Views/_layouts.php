@@ -14,6 +14,8 @@
     <link href="<?= base_url() ?>/assets/css/output.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <script src="//unpkg.com/alpinejs" defer></script>
     
 
@@ -39,7 +41,10 @@
 <?= $this->renderSection('content') ?>
 <?= view('components/_footer') ?>
 
-
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
 </body>
 
 

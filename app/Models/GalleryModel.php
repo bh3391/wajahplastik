@@ -50,7 +50,7 @@ class GalleryModel extends Model
 	}
 	public function getPersonal()
 	{
-		$query = $this->db->query("SELECT * FROM gallery where gallery_kategori = 'personal'");
+		$query = $this->db->query("SELECT * FROM gallery where gallery_kategori = 'Custom'");
 		$result = $query->getResultArray();
 		return $result;
 	}
@@ -61,9 +61,9 @@ class GalleryModel extends Model
 		return $result;
 	}
 	public function search($nama)
-	{
-		$query = $this->db->query("SELECT * FROM gallery where gallery_judul LIKE '%$nama%'");
-		$result = $query->getResultArray();
+	{	
+		$query = $this->db->query("SELECT * FROM gallery where  gallery_judul = '%".$nama."%' ");
+		$result = $query->getResultArray($nama);
 		return $result;
 	}
 	public function PilihGalery($id)

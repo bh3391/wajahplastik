@@ -34,11 +34,10 @@ class Gallery extends BaseController
 	public function search()
 	{	$session = session();
 		$model =new GalleryModel();
-		$nama = $this->request->getVar('nama');
-		$gallery = $model->search($nama);
+		$nama = $this->request->getVar('nama'); 
+		$result = $model->search($nama);
 		
-		
-		if ($gallery == !null) {
+		if ($result == !null) {
 			$session->setFlashdata('Berhasil', 'Wajah Plastik Anda Ditemukan');
 			return redirect()->to('Gallery');
 		} else {
