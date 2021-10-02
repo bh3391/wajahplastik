@@ -13,9 +13,17 @@ class Dashboard extends BaseController
 	public function index()
 	{
 		$session = session();
+		$model = new GalleryModel();
+		
+		$gallery = $model->getGallery();
+		$count = $model->count();
 		$data['judul'] = 'Dashboard';
 		$data['user'] = "Agoes Djanar";
 		$data['breadcrumb'] = "";
+		$data['gallery'] = $gallery;
+		$data['count'] = $count;
+		
+
 		echo view('Admin/_dashboard', $data);
 		$session;
 	}
@@ -57,7 +65,7 @@ class Dashboard extends BaseController
 		$model = new NewsModel();
 		$validation = $this->validate([
 			'News_image' =>
-			'uploaded[News_image]|mime_in[News_image,image/jpg,image/jpeg,image/gif,image/png]|max_size[News_image,1500]'
+			'uploaded[News_image]|mime_in[News_image,image/webp,image/jpg,image/jpeg,image/gif,image/png]|max_size[News_image,1500]'
 		]); // Memvalidasi Gambar yang di upload
 		$title = $this->request->getPost('News_title');
 		$slug = url_title($title, '-', TRUE);
@@ -120,7 +128,7 @@ class Dashboard extends BaseController
 		$model = new NewsModel();
 		$validation = $this->validate([
 			'News_image' =>
-			'uploaded[News_image]|mime_in[News_image,image/jpg,image/jpeg,image/gif,image/png]|max_size[News_image,1500]'
+			'uploaded[News_image]|mime_in[News_image,image/webp,image/jpg,image/jpeg,image/gif,image/png]|max_size[News_image,1500]'
 		]); // Memvalidasi Gambar yang di upload
 		$id = $this->request->getPost('News_id');
 		$title = $this->request->getPost('News_title');
@@ -145,7 +153,7 @@ class Dashboard extends BaseController
 
 			);
 		} else {
-			$path = '../<?=base_url()?>/assets/images/';
+			$path = '../public/assets/images/';
 			$gambar = $this->request->getFile('News_image');
 			@unlink($path, $gambar);
 
@@ -153,7 +161,7 @@ class Dashboard extends BaseController
 			$upload = $this->request->getFile('News_image');
 			$filename = $upload->getName();
 
-			$upload->move(WRITEPATH . '../<?=base_url()?>/assets/images/');
+			$upload->move(WRITEPATH . '../public/assets/images/');
 			$data = array(
 
 				'News_keyword' => $this->request->getPost('News_keyword'),
@@ -301,7 +309,7 @@ class Dashboard extends BaseController
 
 		$validation = $this->validate([
 			'gallery_image' =>
-			'uploaded[gallery_image]|mime_in[gallery_image,image/jpg,image/jpeg,image/gif,image/png]|max_size[gallery_image,2000]'
+			'uploaded[gallery_image]|mime_in[gallery_image,image/jpg,image/jpeg,image/gif,image/png,image/webp]|max_size[gallery_image,2000]'
 		]); // Memvalidasi Gambar yang di upload
 
 		if ($validation == FALSE) {
@@ -355,7 +363,7 @@ class Dashboard extends BaseController
 		}
 		$validation = $this->validate([
 			'gallery_image' =>
-			'uploaded[gallery_image]|mime_in[gallery_image,image/jpg,image/jpeg,image/gif,image/png]|max_size[gallery_image,2000]'
+			'uploaded[gallery_image]|mime_in[gallery_image,image/jpg,image/jpeg,image/gif,image/png,image/webp]|max_size[gallery_image,2000]'
 		]); // Memvalidasi Gambar yang di upload
 		$title      = $this->request->getPost('gallery_judul');
         $slug       = url_title($title, '-', TRUE);

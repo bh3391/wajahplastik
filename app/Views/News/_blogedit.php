@@ -77,6 +77,8 @@
 				<div class="form-group">
 					<input required type="file" name="News_image" class="form-control">
 				</div>
+				<p class="text-sm py-2 text-red-600">*Ukuran File Maksimal 200kb, silahkan klik link untuk mengconvert gambar secara online dengan tipe webp</p>
+				<a class="p-1  bg-gray-900 text-yellow-50"href="https://ezgif.com/jpg-to-webp" target="_blank" rel="noopener noreferrer">Convert</a>
 			</div>
 			<div>
 				Category

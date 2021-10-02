@@ -36,10 +36,11 @@ class Gallery extends BaseController
 		$model =new GalleryModel();
 		$nama = $this->request->getVar('nama'); 
 		$result = $model->search($nama);
+		$data['result'] = ($result);
 		
 		if ($result == !null) {
 			$session->setFlashdata('Berhasil', 'Wajah Plastik Anda Ditemukan');
-			return redirect()->to('Gallery');
+			return redirect()->back()->withInput();
 		} else {
 			$session->setFlashdata('Gagal', 'Data Yang Anda Cari Tidak Ditemukan');
 			return redirect()->to('Gallery');

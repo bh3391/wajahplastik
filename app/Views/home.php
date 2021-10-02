@@ -2,9 +2,9 @@
 
 
 <?= $this->section('content') ?>
-    <div class="div" data-aos="fade-in" data-aos-duration="3000">
+    
     <?= view('components/_hero')?>
-    </div><br>
+    <br>
     
     <?= view('components/_aboutUs')?>
     <hr>
@@ -14,7 +14,7 @@
     <hr>
     <?= view('components/_blogpreview')?>
     <hr>
-    <?= view('components/_youtube')?>
+    <?= view('components/_youtubelist')?>
     <hr>
     <?= view('components/_achievement')?>
     <?= view('components/_cta')?>

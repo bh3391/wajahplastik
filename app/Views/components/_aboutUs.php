@@ -5,15 +5,15 @@
     <div class="lg:w-4/6 mx-auto">
 
       <div class="flex flex-col sm:flex-row mt-10">
-        <div data-aos="fade-down" data-aos-duration="1000"data-aos-delay="500"class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
-          <img class="object-cover object-center rounded-full" alt="profil" src="assets/img/profil.jpg">
+        <div data-aos="fade-down" data-aos-duration="1000"data-aos-delay="500"class=" md:w-1/3 text-center sm:pr-8 sm:py-8">
+          <img class=" object-cover object-center rounded-full" alt="profil" src="assets/img/profil.jpg">
           <div class="flex flex-col items-center text-center justify-center">
             <h2 class="font-medium title-font mt-4 text-gray-900 text-lg">Made Agus Djanardana, S.pd., Gr., M.Kom.</h2>
             <div class="w-12 h-1 bg-red-500 rounded mt-2 mb-4"></div>
             <p class="text-base">CreArtor <span class="text-red-600 font-bold">Wajah</span> Plastik&trade; - Founder Yayasan Sahabat Bumi Bali - Bratajana_Pro</p>
           </div>
         </div>
-        <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
+        <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 md:text-center text-left">
           <p class="leading-relaxed text-lg mb-4">
             <span data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">
             <strong>Sampah Plastik</strong> merupakan masalah Global dan Indonesia adalah negara ke-2 sebagai penyumbang sampah plastik

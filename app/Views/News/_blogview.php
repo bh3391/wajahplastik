@@ -59,6 +59,9 @@
     <div class="container md:w-2/6 bg-white h-screen md:mx-auto p-5">
         <!-- Bagian side untuk iklan -->
         <?= view('components/_googleads')?>
+        <span class="my-x">Total Kunjungan :
+ <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=a8a5dd097cf815e89fff5657525c91bf47cd65ea'></script>
+<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/872990/t/9"></script></span>
         <iframe class="p-2 m-2"src="https://calendar.google.com/calendar/embed?height=300&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FMakassar&src=MHZ0cGJjYTVtZ20wYWpsMnFic2hvZGJkMmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23F4511E&showTitle=0&showNav=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=MONTH&title" style="border:solid 1px #777" width="400" height="300" frameborder="0" scrolling="no"></iframe>
         <div class="grid  ">
                     <h1 class=" underline  text-xl font-bold my-2 text-gray-700"><i class="fas fa-rss"></i>  Artikel Terbaru</h1>

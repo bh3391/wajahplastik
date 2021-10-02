@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<div class="my-5 hover:scale-125" x-data="{ open: false }">
+<div class="my-5 " x-data="{ open: false }">
 
 
     <button @click="open=!open" class="p-2 bg-blue-500 shadow hover:bg-red-600 ease-in-out duration-500 hover:-translate-y-1 text-white rounded-lg transition"><i class="far fa-plus-square mx-1 "></i>Tambahkan Wajah Plastik</button>
@@ -19,7 +19,7 @@
     <?php if (session()->getFlashdata('Hapus')) : ?>
         <div class="mt-4 alert text-white  p-2 bg-red-400 rounded-lg shadow text-sm text-left"><i class="fas fa-trash-alt p-2"></i><?= session()->getFlashdata('Hapus') ?></div>
     <?php endif; ?>
-    <form target="_top"x-show="open " x-transition x-transition:enter.duration.500ms x-transition:leave.duration.400ms method="post" action="<?= base_url(); ?>/Dashboard/galleryAdd" enctype="multipart/form-data">
+    <form target="_top" x-show="open " x-transition x-transition:enter.duration.500ms x-transition:leave.duration.400ms method="post" action="<?= base_url(); ?>/Dashboard/galleryAdd" enctype="multipart/form-data">
         <div class="block items-center absolute z-10  mx-auto mt-2 bg-gray-800 rounded-xl bg-opacity-60 backdrop-filter backdrop-blur-lg p-10">
             <input required class=" border-b-2 border-gray-300 my-2 focus:outline-none bg-gray-50 block w-full py-2 px-4 rounded-lg " type="text" placeholder="Masukan Judul Karya" name="gallery_judul">
             <textarea required class="bg-transparent border-2 border-gray-300 my-2 focus:outline-none bg-gray-50 block w-full py-2 px-4 rounded-lg " type="textarea" placeholder="Deskripsi" name="gallery_deskripsi"></textarea>
@@ -37,6 +37,8 @@
                 <div class="form-group">
                     <input required type="file" name="gallery_image" class="form-control">
                 </div>
+                <p class="text-sm py-2 text-red-600">*Ukuran File Maksimal 200kb, silahkan klik link untuk mengconvert gambar secara online dengan tipe webp</p>
+                <a class="p-1  bg-gray-900 text-yellow-50" href="https://ezgif.com/jpg-to-webp" target="_blank" rel="noopener noreferrer">Convert</a>
             </div>
             <button @click="open=!open" class="flex-shrink-0 bg-red-600 hover:bg-red-700 border-red-600 hover:border-red-700 text-sm border-4 text-white py-1 px-2 rounded">
                 Batal

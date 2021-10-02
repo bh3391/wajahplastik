@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="<?= base_url() ?>/assets/js/main.js" defer></script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Poppins&display=swap');
@@ -40,12 +42,15 @@
 
             <!-- Bagian Menu -->
 
-            <div x-transition x-show="open" class=" static  border-r-2  delay-100 border-red-600 w-1/4 mr-5 md:block pb-4 md:pb-0 text-md  bg-gray-800 text-white ">
+            <div x-transition x-show="open" class="   border-r-2  delay-100 border-red-600  relative w-1/5 mr-5 md:block pb-4 md:pb-0 text-md  bg-gray-800 text-white ">
 
                 <hr>
-                <div >
+                <div>
                     <div>
                         <h1 class="pb-4 text-left p-1"><i class="fas fa-user-circle p-2"></i> <?= $user ?></h1>
+                    </div>
+                    <div class="hover:bg-black  p-3 shadow-sm   hover:text-white">
+                        <i class="fas fa-home"></i><a class="side-menu p-2 " href="/dashboard">Dashboard</a>
                     </div>
                     <div class="hover:bg-black  p-3 shadow-sm   hover:text-white">
                         <i class="fas fa-rss-square"></i><a class="side-menu p-2 " href="/dashboard/blogList">Blog</a>
@@ -66,7 +71,7 @@
                 </div>
             </div>
 
-            <div x-transition class=" flex-grow h-auto w-auto  rounded-lg bg-gray-50   items-center p-5 md:ml-10 m-1 relative ">
+            <div x-transition class=" flex-grow h-screen w-auto  rounded-lg bg-gray-50   items-center p-5  m-1 relative ">
                 <div class="bg-blue-100 p-1 rounded-lg">
                     <h1 class="text-lg p-1"><a href="/dashboard">Dashboard</a><?= $breadcrumb ?> </h1>
                 </div>
@@ -83,7 +88,7 @@
 
 
 
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 
 

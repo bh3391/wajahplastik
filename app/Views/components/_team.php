@@ -1,14 +1,14 @@
 <section class="text-gray-600 body-font">
-  <div   class="container px-5 py-24 mx-auto">
+  <div   class="container px-5 py-24 mx-auto place-items-center">
     <div data-aos="fade-down" data-aos-duration="800" data-aos-delay="50" class="flex flex-col text-center w-full mb-20">
       <h1 class="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest">OUR TEAM</h1>
 
       <p class="lg:w-2/3 mx-auto leading-relaxed text-base">“Datang bersama adalah awal, tetap bersama adalah kemajuan, dan bekerja bersama adalah kesuksesan.” - Henry Ford</p>
     </div>
-    <div class="flex flex-wrap -m-4">
+    <div class="flex flex-wrap sm:justify-around -m-4">
       <div data-aos="fade-down" data-aos-duration="1000" data-aos-delay="50"  class="p-4 lg:w-1/2">
-        <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-          <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="<?= base_url()?>/assets/img/djanar2.jpg">
+        <div class="h-full flex sm:flex-row flex-col items-center sm:justify-around justify-center text-center sm:text-left">
+          <img loading="lazy" alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="<?= base_url()?>/assets/img/Djanar.webp">
           <div class="flex-grow sm:pl-8">
             <h2 class="title-font font-medium text-lg text-gray-900">Made Agus Djanardana ( Made Oplas )</h2>
             <h3 class="text-gray-500 mb-3">Founder & CreArtor Wajah Plastik</h3>
@@ -33,9 +33,9 @@
           </div>
         </div>
       </div>
-      <div  data-aos="fade-down" data-aos-duration="1000" data-aos-delay="50" class="p-4 lg:w-1/2">
-        <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-          <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="<?= base_url()?>/assets/img/Citra.jpg">
+      <div  data-aos="fade-down" data-aos-duration="1000" data-aos-delay="50" class="p-4 md:ml-0 mx-auto lg:w-1/2">
+        <div class="h-full flex sm:flex-row flex-col items-center justify-center text-center sm:text-left">
+          <img loading="lazy" alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="<?= base_url()?>/assets/img/Citra.webp">
           <div class="flex-grow sm:pl-8">
             <h2 class="title-font font-medium text-lg text-gray-900">Kadek Citrayani Dewi</h2>
             <h3 class="text-gray-500 mb-3">Public Relation</h3>
@@ -62,11 +62,11 @@
       </div>
       <div data-aos="fade-right" data-aos-duration="1400" data-aos-delay="150" class="p-4 lg:w-1/2">
         <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-          <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="<?= base_url()?>/assets/img/Okky.jpg">
+          <img loading="lazy" alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="<?= base_url()?>/assets/img/Okky.webp">
           <div class="flex-grow sm:pl-8">
             <h2 class="title-font font-medium text-lg text-gray-900">Kadek Okik Sanjaya</h2>
             <h3 class="text-gray-500 mb-3">Designer Grafis</h3>
-            <p class="mb-4">"Badai Pasti Berlalu"</p>
+            <p class="mb-4">"Nikmati hari ini, karena esok adalah misteri."</p>
             <span class="inline-flex">
               <a class="text-gray-500">
                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
@@ -89,11 +89,11 @@
       </div>
       <div data-aos="fade-left" data-aos-duration="1400" data-aos-delay="150" class="p-4 lg:w-1/2">
         <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-          <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="<?= base_url()?>/assets/img/Bhakti.jpg">
+          <img loading="lazy" alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="<?= base_url()?>/assets/img/Bhakti.webp">
           <div class="flex-grow sm:pl-8">
             <h2 class="title-font font-medium text-lg text-gray-900">Bhakti Pratama</h2>
             <h3 class="text-gray-500 mb-3">Webmaster </h3>
-            <p class="mb-4">"Tidak ada yang namanya kegagalan tanpa kesuksesan, Bangkit berdiri Teruslah Berusaha dan Berkarya"</p>
+            <p class="mb-4">"Tidak ada yang namanya kesuksesan tanpa kegagalan, Bangkit berdiri Teruslah Berusaha dan Berkarya"</p>
             <span class="inline-flex">
               <a class="text-gray-500">
                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
@@ -116,7 +116,7 @@
       </div>
       <div data-aos="fade-up" data-aos-duration="1200" data-aos-delay="50" class="p-4 lg:w-1/2">
         <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-          <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="<?= base_url()?>/assets/img/wira.jpg">
+          <img loading="lazy" alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="<?= base_url()?>/assets/img/Wira.webp">
           <div class="flex-grow sm:pl-8">
             <h2 class="title-font font-medium text-lg text-gray-900">Made Wirahadi Permana</h2>
             <h3 class="text-gray-500 mb-3">Production</h3>
@@ -143,7 +143,7 @@
       </div>
       <div data-aos="fade-up" data-aos-duration="1200" data-aos-delay="50" class="p-4 lg:w-1/2">
         <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-          <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="<?= base_url()?>/assets/img/Rizky.jpeg">
+          <img loading="lazy" alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="<?= base_url()?>/assets/img/Rizky.webp">
           <div class="flex-grow sm:pl-8">
             <h2 class="title-font font-medium text-lg text-gray-900">Kadek Rizky Setiawan</h2>
             <h3 class="text-gray-500 mb-3">Production</h3>

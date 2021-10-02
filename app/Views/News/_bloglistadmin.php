@@ -18,21 +18,23 @@
         <div class="my-5 hover:scale-125"><a class="text-md m-1 shadow-md hover:shadow-lg    bg-green-600 text-white hover:bg-green-500 p-3 rounded-xl" href="<?php echo base_url(); ?>/dashboard/blogForm"> <i class="fa fa-plus-circle p-1" aria-hidden="true"></i>Tambahkan Berita</a>
         </div>
         <div class="my-2  p-2 ">
+            <span  class="py-1">
             <?php if (session()->getFlashdata('Publish')) : ?>
-                <div class="alert text-yellow-800  p-2 bg-yellow-500 rounded-sm shadow text-sm text-left"><i class="fas fa-check p-2"></i><?= session()->getFlashdata('Publish') ?></div>
+                <div data-aos ="zoom-in" class="my-2 alert text-yellow-800  p-2 bg-yellow-500 rounded-sm shadow text-sm text-left"><i class="fas fa-check p-2"></i><?= session()->getFlashdata('Publish') ?></div>
             <?php endif; ?>
             <?php if (session()->getFlashdata('Update')) : ?>
-                <div class="alert text-blue-200  p-2 bg-blue-500 rounded-sm shadow text-sm text-left"><i class="fas fa-check p-2"></i><?= session()->getFlashdata('Update') ?></div>
+                <div data-aos ="zoom-in" class="alert text-blue-200  p-2 bg-blue-500 rounded-sm shadow text-sm text-left"><i class="fas fa-check p-2"></i><?= session()->getFlashdata('Update') ?></div>
             <?php endif; ?>
             <?php if (session()->getFlashdata('msg')) : ?>
-                <div class="alert text-white  p-2 bg-green-500 rounded-sm shadow text-sm text-left"><i class="fas fa-check p-2"></i><?= session()->getFlashdata('msg') ?></div>
+                <div data-aos ="zoom-in" class="alert text-white  p-2 bg-green-500 rounded-sm shadow text-sm text-left"><i class="fas fa-check p-2"></i><?= session()->getFlashdata('msg') ?></div>
             <?php endif; ?>
             <?php if (session()->getFlashdata('Hapus')) : ?>
-                <div class="alert text-white  p-2 bg-red-500 rounded-sm shadow text-sm text-left"><i class="fas fa-trash-alt p-2"></i><?= session()->getFlashdata('Hapus') ?></div>
+                <div data-aos ="zoom-in" class="alert text-white  p-2 bg-red-500 rounded-sm shadow text-sm text-left"><i class="fas fa-trash-alt p-2"></i><?= session()->getFlashdata('Hapus') ?></div>
             <?php endif; ?>
             <?php if (session()->getFlashdata('err')) : ?>
-                <div class="alert text-white  p-2 bg-red-400 rounded-lg shadow text-sm text-left"><i class="fas fa-trash-alt p-2"></i><?= session()->getFlashdata('err') ?></div>
+                <div data-aos ="zoom-in" class="alert text-white  p-2 bg-red-400 rounded-lg shadow text-sm text-left"><i class="fas fa-trash-alt p-2"></i><?= session()->getFlashdata('err') ?></div>
             <?php endif; ?>
+            </span>
 
             <table class="  table-auto css-serial table text-xs">
                 <thead>

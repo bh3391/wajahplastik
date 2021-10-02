@@ -25,12 +25,12 @@
     <?php if (session()->getFlashdata('Berhasil')) : ?>
         <div data-aos="flip-up" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500" class="alert text-white  p-2 bg-green-500 rounded-sm shadow text-sm text-left"><i class="fas fa-check"></i><?= session()->getFlashdata('Berhasil') ?></div>
         <div class=" flex flex-wrap justify-center md:grid grid-flow-row grid-cols-4  gap-5 mx-auto p-5 justify-items-center md:w-5/6 bg-gray-50 my-5 h-auto">
-            <?php foreach ($result as $row) : ?>
+            <?php foreach ($gallery as $row) : ?>
                 <span class="text-center border-1 border-gray-800 shadow p-2 ">
-                    <img loading="lazy" class=" bg-gray-800 p-1" src="../assets/images/<?= $result["gallery_image"] ?>" alt="dummy">
-                    <h1 class="p-1 text-red-500 font-semibold uppercase"><?= $result["gallery_judul"] ?></h1>
-                    <h2><?= $result["created_date"] ?></h2>
-                    <a href='gallery/details/<?= $result["gallery_id"] ?>'>show details</a>
+                    <img loading="lazy" class=" bg-gray-800 p-1" src="../assets/images/<?= $row["gallery_image"] ?>" alt="dummy">
+                    <h1 class="p-1 text-red-500 font-semibold uppercase"><?= $row["gallery_judul"] ?></h1>
+                    <h2><?= $row["created_date"] ?></h2>
+                    <a href='gallery/details/<?= $row["gallery_id"] ?>'>show details</a>
                 </span>
             <?php endforeach; ?>
         </div>

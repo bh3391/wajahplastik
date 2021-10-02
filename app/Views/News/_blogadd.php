@@ -8,7 +8,7 @@
 	<form method="post" action="<?= base_url(); ?>/Dashboard/blogAdd" enctype="multipart/form-data">
 		<div class="row bg-gray-200 rounded-xl bg-opacity-60 backdrop-filter backdrop-blur-lg">
 			<div class="md:w-5/6">
-				<div class="row p-2">
+				<div class="row p-4">
 					<div class="col-md-12">
 						<label class="block mb-2 text-md text-gray-600 " l>Judul</label>
 						<div class="form-group">
@@ -75,10 +75,14 @@
 				<label class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Photo</label>
 				<div class="form-group">
 					<input required type="file" name="News_image" class="form-control">
+					
 				</div>
+				<p class="text-sm py-2 text-red-600">*Ukuran File Maksimal 200kb, silahkan klik link untuk mengconvert gambar secara online dengan tipe webp</p>
+				<a class="p-1  bg-gray-900 text-yellow-50"href="https://ezgif.com/jpg-to-webp" target="_blank" rel="noopener noreferrer">Convert</a>
 			</div>
 			<div>
-				Category
+			<label class="p-3 block mb-2 text-sm text-gray-600 dark:text-gray-400">Category</label>
+				
 				<select class="m-2 bg-gray-200 border-2 p-1 rounded-lg" id="kategori" name="News_category">
 					<option value="Berita">Berita</option>
 					<option value="Achievement">Achievement</option>
@@ -87,7 +91,7 @@
 				</select>
 			</div>
 			<div>
-				Status
+			<label class="p-3 block mb-2 text-sm text-gray-600 dark:text-gray-400">Status</label>
 				<select class="m-2 bg-gray-200 border-2 p-1 rounded-lg" id="kategori" name="News_status">
 					<option value="publish">Published</option>
 					<option value="draft">Draft</option>
