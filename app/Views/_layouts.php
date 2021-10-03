@@ -12,7 +12,7 @@
     <meta name="Application-name" content="Wajah Plastik">
     <link href="<?= base_url() ?>/favicon.ico" rel="icon" type="image/gif">
 
-    <link href="<?= base_url() ?>/assets/css/output.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/assets/css/styles.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -44,9 +44,9 @@
 
 
 <?= view('components/_footer') ?>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script  src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 </body>
 
 
-</html>
+</html>NODE_ENV=production npx tailwindcss -i ./public/assets/css/tailwind.css -o ./dist/tailwind.css --minify

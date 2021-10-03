@@ -115,7 +115,7 @@
         </thead>
         <tbody class="text-gray-600 text-sm ">
             <?php foreach ($gallery as $row) : ?>
-                <tr class="border-b border-gray-200 hover:bg-gray-100">
+                <tr data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500" class="border-b border-gray-200 hover:bg-gray-100">
                     <td class="py-3 px-6 text-center"></td>
                     <td class="py-3 px-6 text-left"><span class="inline-block w-2 h-2 mr-2 bg-green-600 rounded-full"></span> <?= $row["gallery_judul"] ?></td>
                     <td class="py-3 px-6 text-left"><?= $row["gallery_sertilengkap"] ?></td>

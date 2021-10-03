@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="Description" content="Enter your description here" />
-    <link href="<?= base_url() ?>/assets/css/output.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/assets/css/styles.css" rel="stylesheet">
     <link href="<?= base_url() ?>/favicon.ico" rel="icon" type="image/gif">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="//unpkg.com/alpinejs" defer></script>
-    <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+    <script defer src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="<?= base_url() ?>/assets/js/main.js" defer></script>
 
@@ -42,10 +42,10 @@
 
             <!-- Bagian Menu -->
 
-            <div x-transition x-show="open" class="   border-r-2  delay-100 border-red-600  relative w-1/5 mr-5 md:block pb-4 md:pb-0 text-md  bg-gray-800 text-white ">
+            <div data-aos="fade-right" x-transition x-show="open" class="   border-r-2  delay-100 border-red-600  relative w-1/5 mr-5 md:block pb-4 md:pb-0 text-md  bg-gray-800 text-white ">
 
                 <hr>
-                <div>
+                <div  >
                     <div>
                         <h1 class="pb-4 text-left p-1"><i class="fas fa-user-circle p-2"></i> <?= $user ?></h1>
                     </div>
@@ -88,7 +88,7 @@
 
 
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script  src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 
 
