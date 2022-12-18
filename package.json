@@ -1,0 +1,31 @@
+{
+    "name": "wajahplastik3",
+    "version": "1.0.0",
+    "description": "Wajahplastik",
+    "main": "index.js",
+    "directories": {
+        "test": "tests"
+    },
+    "scripts": {
+        "build:css": "tailwindcss -i ./public/assets/css/styles.css -o dist/styles.css",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bh3391/wajahplastik.git"
+    },
+    "keywords": [
+        "Wajahplastik"
+    ],
+    "author": "I Gede Bhakti Pratama",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/bh3391/wajahplastik/issues"
+    },
+    "homepage": "https://github.com/bh3391/wajahplastik#readme",
+    "devDependencies": {
+        "autoprefixer": "^10.3.6",
+        "postcss": "^8.3.8",
+        "tailwindcss": "^2.2.16"
+    }
+}
